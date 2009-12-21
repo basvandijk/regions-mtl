@@ -8,7 +8,7 @@ copyright:     2009 Bas van Dijk
 author:        Bas van Dijk
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
 stability:     experimental
-category:
+category:      Control
 synopsis:      Monads-fd instances for the RegionT monad transformer
 
 source-repository head
@@ -22,4 +22,3 @@ Library
                , regions         == 0.1.*
                , monads-fd       == 0.0.*
   exposed-modules: Control.Monad.Trans.Region.Instances.MonadsFD
-
