@@ -32,31 +32,31 @@ import Control.Monad.Trans ( lift )
 import Data.Function.Unicode ( (∘) )
 
 -- from regions:
-import Control.Monad.Trans.Region.Internal ( RegionT
-                                           , liftCatch
-                                           , mapRegionT
-                                           -- TODO: , liftCallCC
-                                           )
+import Control.Monad.Trans.Region.Unsafe ( RegionT
+                                         , liftCatch
+                                         , mapRegionT
+                                         -- TODO: , liftCallCC
+                                         )
 
 -- TODO:
--- instance Monad pr ⇒ MonadCont (RegionT resource s pr) where
+-- instance Monad pr ⇒ MonadCont (RegionT s pr) where
 --     callCC = liftCallCC callCC
 
-instance MonadError e pr ⇒ MonadError e (RegionT resource s pr) where
+instance MonadError e pr ⇒ MonadError e (RegionT s pr) where
     throwError = lift ∘ throwError
     catchError = liftCatch catchError
 
-instance MonadRWS r w st pr ⇒ MonadRWS r w st (RegionT resource s pr)
+instance MonadRWS r w st pr ⇒ MonadRWS r w st (RegionT s pr)
 
-instance MonadReader r pr ⇒ MonadReader r (RegionT resource s pr) where
+instance MonadReader r pr ⇒ MonadReader r (RegionT s pr) where
     ask   = lift ask
     local = mapRegionT ∘ local
 
-instance MonadWriter w pr ⇒ MonadWriter w (RegionT resource s pr) where
+instance MonadWriter w pr ⇒ MonadWriter w (RegionT s pr) where
     tell   = lift ∘ tell
     listen = mapRegionT listen
     pass   = mapRegionT pass
 
-instance MonadState st pr ⇒ MonadState st (RegionT resource s pr) where
+instance MonadState st pr ⇒ MonadState st (RegionT s pr) where
     get = lift get
     put = lift ∘ put
