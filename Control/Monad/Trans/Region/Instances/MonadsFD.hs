@@ -32,11 +32,11 @@ import Control.Monad.Trans ( lift )
 import Data.Function.Unicode ( (∘) )
 
 -- from regions:
-import Control.Monad.Trans.Region.Unsafe ( RegionT
-                                         , liftCatch
-                                         , mapRegionT
-                                         -- TODO: , liftCallCC
-                                         )
+import Control.Monad.Trans.Region ( RegionT
+                                  , liftCatch
+                                  , mapRegionT
+                                  -- TODO: , liftCallCC
+                                  )
 
 -- TODO:
 -- instance Monad pr ⇒ MonadCont (RegionT s pr) where
