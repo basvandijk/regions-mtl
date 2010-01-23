@@ -1,8 +1,9 @@
-{-# LANGUAGE UnicodeSyntax #-}
-{-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE FlexibleInstances #-}
-{-# LANGUAGE UndecidableInstances #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+{-# LANGUAGE UnicodeSyntax
+           , MultiParamTypeClasses
+           , FlexibleInstances
+           , UndecidableInstances
+           , NoImplicitPrelude
+  #-}
 
 -------------------------------------------------------------------------------
 -- |
