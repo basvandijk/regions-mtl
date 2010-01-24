@@ -1,8 +1,8 @@
 {-# LANGUAGE UnicodeSyntax
+           , NoImplicitPrelude
            , MultiParamTypeClasses
            , FlexibleInstances
            , UndecidableInstances
-           , NoImplicitPrelude
   #-}
 
 -------------------------------------------------------------------------------
@@ -19,7 +19,7 @@
 module Control.Monad.Trans.Region.Instances.MonadsFD where
 
 -- from monads-fd:
--- TODO: import Control.Monad.Cont.Class   ( MonadCont, callCC )
+import Control.Monad.Cont.Class   ( MonadCont, callCC )
 import Control.Monad.Error.Class  ( MonadError, throwError, catchError )
 import Control.Monad.RWS.Class    ( MonadRWS )
 import Control.Monad.Reader.Class ( MonadReader, ask, local )
@@ -34,14 +34,13 @@ import Data.Function.Unicode ( (∘) )
 
 -- from regions:
 import Control.Monad.Trans.Region ( RegionT
+                                  , liftCallCC
                                   , liftCatch
                                   , mapRegionT
-                                  -- TODO: , liftCallCC
                                   )
 
--- TODO:
--- instance Monad pr ⇒ MonadCont (RegionT s pr) where
---     callCC = liftCallCC callCC
+instance MonadCont pr ⇒ MonadCont (RegionT s pr) where
+    callCC = liftCallCC callCC
 
 instance MonadError e pr ⇒ MonadError e (RegionT s pr) where
     throwError = lift ∘ throwError
