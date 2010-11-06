@@ -1,4 +1,4 @@
-name:          regions-monadsfd
+name:          regions-mtl
 version:       0.3.1.4
 cabal-version: >=1.6
 build-type:    Simple
@@ -9,16 +9,15 @@ author:        Bas van Dijk
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
 stability:     experimental
 category:      Control, Monadic Regions
-synopsis:      Monads-fd instances for the RegionT monad transformer
+synopsis:      mtl instances for the RegionT monad transformer
 
 source-repository head
   Type:     darcs
-  Location: http://code.haskell.org/~basvandijk/code/regions-monadsfd
+  Location: http://code.haskell.org/~basvandijk/code/regions-mtl
 
 Library
   GHC-Options: -Wall -fno-warn-orphans
   build-depends: base-unicode-symbols >= 0.1.1 && < 0.3
-               , transformers         >= 0.1.4 && < 0.3
+               , mtl                  >= 2.0   && < 2.1
                , regions              >= 0.4   && < 0.9
-               , monads-fd            >= 0.0   && < 0.2
-  exposed-modules: Control.Monad.Trans.Region.Instances.MonadsFD
+  exposed-modules: Control.Monad.Trans.Region.Instances.MTL

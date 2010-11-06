@@ -7,18 +7,18 @@
 
 -------------------------------------------------------------------------------
 -- |
--- Module      :  Control.Monad.Trans.Region.Instances.MonadsFD
--- Copyright   :  (c) 2009 Bas van Dijk
+-- Module      :  Control.Monad.Trans.Region.Instances.MTL
+-- Copyright   :  (c) 2010 Bas van Dijk
 -- License     :  BSD3 (see the file LICENSE)
 -- Maintainer  :  Bas van Dijk <v.dijk.bas@gmail.com>
 --
--- This module provides instances for the monads-fd classes for 'RegionT's.
+-- This module provides instances for the mtl monad classes for 'RegionT's.
 --
 --------------------------------------------------------------------------------
 
-module Control.Monad.Trans.Region.Instances.MonadsFD where
+module Control.Monad.Trans.Region.Instances.MTL where
 
--- from monads-fd:
+-- from mtl:
 import Control.Monad.Cont.Class   ( MonadCont, callCC )
 import Control.Monad.Error.Class  ( MonadError, throwError, catchError )
 import Control.Monad.RWS.Class    ( MonadRWS )
@@ -26,7 +26,6 @@ import Control.Monad.Reader.Class ( MonadReader, ask, local )
 import Control.Monad.State.Class  ( MonadState, get, put )
 import Control.Monad.Writer.Class ( MonadWriter, tell, listen, pass )
 
--- from transformers:
 import Control.Monad.Trans ( lift )
 
 -- from unicode-symbols:
