@@ -1,5 +1,5 @@
 name:          regions-mtl
-version:       0.3.1.4
+version:       0.3.1.5
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
@@ -19,5 +19,5 @@ Library
   GHC-Options: -Wall -fno-warn-orphans
   build-depends: base-unicode-symbols >= 0.1.1 && < 0.3
                , mtl                  >= 2.0   && < 2.1
-               , regions              >= 0.4   && < 0.9
+               , regions              >= 0.4   && < 0.10
   exposed-modules: Control.Monad.Trans.Region.Instances.MTL
