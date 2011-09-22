@@ -20,5 +20,5 @@ Library
   GHC-Options: -Wall -fno-warn-orphans
   build-depends: base-unicode-symbols >= 0.1.1 && < 0.3
                , mtl                  >= 2.0   && < 2.1
-               , regions              >= 0.4   && < 0.10
+               , regions              >= 0.4   && < 0.11
   exposed-modules: Control.Monad.Trans.Region.Instances.MTL
